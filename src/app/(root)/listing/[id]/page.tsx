@@ -51,7 +51,7 @@ function Detail({ params }: { params: { id: string } }) {
               </div>
 
               <div className="flex items-center space-x-[30px]">
-                <div className="flex items-center font-semibold leading-6">
+                <div className="flex items-center font-semibold leading-6 max-w-[500px]">
                   <Image
                     src="/icons/location-dark.svg"
                     alt="location-dark"
