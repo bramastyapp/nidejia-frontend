@@ -4,20 +4,29 @@ export const transactionApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     checkAvaibility: builder.mutation({
       query: (payload) => ({
-        url: "transaction/is-available",
+        url: "/transaction/is-available",
         method: "POST",
         body: payload,
       }),
     }),
     transaction: builder.mutation({
       query: (payload) => ({
-        url: "transaction",
+        url: "/transaction",
         method: "POST",
         body: payload,
+      }),
+    }),
+    getDetailTransaction: builder.query({
+      query: (id) => ({
+        url: `/transaction/${id}`,
+        method: "GET",
       }),
     }),
   }),
 });
 
-export const { useCheckAvaibilityMutation, useTransactionMutation } =
-  transactionApi;
+export const {
+  useCheckAvaibilityMutation,
+  useTransactionMutation,
+  useGetDetailTransactionQuery,
+} = transactionApi;
